@@ -1,0 +1,50 @@
+Configuration in Eclipse:IDE
+1)  Click on file, select new then select maven project
+2) Set default workspace location click next
+3) For catalog select internal, for filter select maven- archetype - quickstart then click next
+4) Type group-id (vvce) and artifact id (ise) and click finish
+5) In the console Press Y and enter
+6) Under pom.xml create class (eg: dev.java)
+7) Under pom.xml create folder (eg: JS0N)
+8) Under JSON create file (eg: demo.json) 
+
+Configuration using Maven Repository
+1) In the browser type maven repostory. Search for JSON simple click on version 1.1.1 and copy code
+
+
+9) Come back to Eclipse -IDE. Click on pom.xml after ‹/dependency> paste the code.
+10) In demo.json type the following
+
+{
+	"firstname":"Huda",
+	"lastname":"Kausar"
+}
+
+
+11) In dev.java type the follourng code and
+run code
+
+package vvce.ise;
+import java. io. FileReader;
+import java. io. IOException;
+import java. text. ParseException;
+import org. json. simple. JSONObject;
+import org. json. simple.parser. JSONParser;
+
+public class dev {
+public static void main(String [] args) throws IOException, ParseException, org. json. simple.parser. ParseException{
+JSONParser jsonparser=new JSONParser();
+FileReader reader=new FileReader(".\\JSON\\demo.json");
+Object obj=jsonparser.parse(reader);
+JSONObject empjsonobj=(JSONObject)obj;
+String fname=(String)empjsonobj.get("firstname");
+String lname=(String)empjsonobj.get("lastname");
+System.out.println("first name:"+fname);
+System.out.println("last name:"+lname);
+}
+}
+
+
+Output :
+first name: Huda 
+last name: Kausar

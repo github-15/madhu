@@ -1,0 +1,23 @@
+
+x = 5
+y = 10
+print(x + y)
+
+
+
+FROM python
+WORKDIR /app
+COPY . /app
+RUN python sample.py
+CMD ["python", "sample.py"]
+
+
+
+docker build -t "app" .
+docker images
+docker tag app:latest hudakausar/huda
+docker images
+docker login -u hudakausar 
+enter password here
+docker push hudakausar/huda
+docker pull hudakausar/huda

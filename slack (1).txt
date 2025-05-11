@@ -1,0 +1,20 @@
+Configuration using Jenkins
+1 Login to Jenkins
+2) In Manage Jenkins, select plugins then select available plugins and install Slack Notification
+
+
+Configuration using Slack
+1) Download and install slack for windows
+2) Login to slack
+3) Select any workspace
+4) Click on More, then Automations, then Apps and search for Jenkins CI.
+5) click on Configuration, add to slack and select any channel.
+6) Copy secret text
+
+
+
+3) Come back to Jenkins, Manage Jenkins, System configuration, scroll to slack. For workspace enter workspace name, credential add → Jenkins → Kind → Secret text, Secret paste ID→ news9
+ Add credential → new9 channel → # social Test connection Save
+4) In Dashboard select any project configure → Post Build Action→ Select slack notification and enable all and save
+Build Now
+6) Output of actions displayed under #social channel in Slack.
